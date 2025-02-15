@@ -32,7 +32,6 @@ sudo pacman -U --noconfirm "$FILENAME" || { echo "Installation failed"; exit 1; 
 curl -L https://github.com/hhd-dev/hhd/raw/master/install.sh | bash
 
 ### Step 3: Update the existing override.conf and variables
-
 CONFIG_FILE="/usr/lib/systemd/system/hhd@.service.d/override.conf"
 
 echo "[Service]
