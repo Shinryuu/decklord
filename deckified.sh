@@ -35,4 +35,4 @@ pacman -Qi inputplumber &>/dev/null && sudo pacman -Rns --noconfirm inputplumber
 echo "blacklist hid-asus" | sudo tee /etc/modprobe.d/blacklist.conf > /dev/null
 
 # Deckify the system
-pacman -S --needed --noconfirm cachyos-handheld linux-cachyos-deckify linux-cachyos-deckify-headers
+pacman -S --needed --noconfirm cachyos-handheld
