@@ -1,12 +1,6 @@
 #!/bin/bash
-# Simple script for Rog Ally X and
-# CachyOS w/ Bazzite kernel
-
-# Define package names to install
-PACKAGES=(asusctl rog-control-center decky-loader-bin ryzen_smu-dkms-git ryzenadj-git)
-
-# Install required packages via paru
-paru -S --noconfirm "${PACKAGES[@]}"
+# Script to fetch latest Bazzite kernel
+# and install it for CachyOS.
 
 # Fetch the latest Bazzite Kernel package URL
 API_URL="https://api.github.com/repos/hhd-dev/kernel-bazzite/releases/latest"
@@ -18,6 +12,3 @@ FILENAME=$(basename "$DOWNLOAD_URL")
 echo "Downloading $FILENAME..."
 curl -L -o "$FILENAME" "$DOWNLOAD_URL"
 sudo pacman -U --noconfirm "$FILENAME"
-
-# Run additional setup
-curl -L https://github.com/hhd-dev/hhd/raw/master/install.sh | bash
