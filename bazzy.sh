@@ -21,14 +21,3 @@ sudo pacman -U --noconfirm "$FILENAME"
 
 # Run additional setup
 curl -L https://github.com/hhd-dev/hhd/raw/master/install.sh | bash
-
-# Update systemd override configuration
-sudo tee /usr/lib/systemd/system/hhd@.service.d/override.conf > /dev/null <<EOF
-[Service]
-Environment="HHD_PPD_MASK=1"
-Environment="HHD_ALLY_POWERSAVE=1"
-Environment="HHD_HORI_STEAM=1"
-EOF
-
-sudo systemctl daemon-reload
-echo "Done!"
